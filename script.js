@@ -13,9 +13,39 @@ $(document).ready(function() {
         q3: 'r8',
     }
 
+    $('.reponse').css({
+        'display': 'none',
+        'font-style': 'italic',
+        'font-weight': '400'
+    })
+
+
     $("form").on("submit", function(event) {
         event.preventDefault(); // Empêche l'envoi classique du formulaire
         // Vérifier la question 1
+        $('.question').css({
+            'display': 'flex',
+            'flex-direction': 'row',
+            'background-color': 'aquamarine',
+            'border': '4px solid',
+            'margin': '10px',
+            'position': 'relative',
+            'margin-bottom': '20px',
+        })
+        $('.reponse').css({
+            'display': 'none',
+            'font-style': 'italic',
+            'font-weight': '400'
+        })
+        $('img').css({
+            'position': 'absolute',
+            'right': '5px',
+            'width': '50px',
+            'height': '50px',
+        })
+        $('button').css({
+            'margin-left': '47%',
+        });
         if ($("input[name='q1']:checked").attr("id") === answerCorrect.q1) {
             // Bonne réponse pour la question 1
             $("#img1").attr("src", "bon.png");
